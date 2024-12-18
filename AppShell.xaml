@@ -8,8 +8,40 @@
     Title="DroneOps">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Title="Dashboard"
+        ContentTemplate="{DataTemplate local:Dashboard}"
+        Route="Dashboard" />
 
+    <FlyoutItem Title="Assets" FlyoutDisplayOptions="AsSingleItem">
+        <ShellContent
+            Title="Aircraft" 
+            ContentTemplate="{DataTemplate local:Aircraft}"
+            Route="Aircraft" />
+        <ShellContent
+            Title="Batteries"
+            ContentTemplate="{DataTemplate local:Batteries}"
+            Route="Batteries" />
+        <ShellContent
+            Title="Payloads" 
+            
+            Route="Payloads"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Logs">
+        <ShellContent 
+            Title="Flights" />
+        <ShellContent
+            Title="Maintenance" />
+        <ShellContent
+            Title="Incidents" />
+        <ShellContent
+            Title="Training" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Operations">
+        <ShellContent
+            Title="LAANC Approvals" />
+    </FlyoutItem>
+    
+    <ShellContent Title="Pilots"/>
 </Shell>
