@@ -1,11 +1,10 @@
 ﻿namespace DroneOps.Pages
 {
-    public partial class Dashboard : ContentPage
+    public partial class AircraftList : ContentPage
     {
-        public Dashboard()
+        public AircraftList()
         {
             InitializeComponent();
         }
     }
-
 }

@@ -1,4 +1,4 @@
-namespace DroneOps;
+namespace DroneOps.Pages;
 
 public partial class Batteries : ContentPage
 {

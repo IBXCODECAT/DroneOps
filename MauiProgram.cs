@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using DroneOps.Pages;
+using Microsoft.Extensions.Logging;
 
 namespace DroneOps
 {

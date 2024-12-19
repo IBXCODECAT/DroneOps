@@ -62,11 +62,12 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+		<PackageReference Include="Syncfusion.Maui.DataGrid" Version="28.1.35" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Pages\Assets\Aircraft.xaml.cs">
-	    <DependentUpon>Aircraft.xaml</DependentUpon>
+	  <Compile Update="Pages\AircraftList.xaml.cs">
+	    <DependentUpon>AircraftList.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Pages\Dashboard.xaml.cs">
 	    <DependentUpon>Dashboard.xaml</DependentUpon>
@@ -74,10 +75,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\Assets\Aircraft.xaml">
+	  <MauiXaml Update="Pages\AircraftList.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\Assets\Batteries.xaml">
+	  <MauiXaml Update="Pages\Batteries.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

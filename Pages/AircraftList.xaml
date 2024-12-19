@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DroneOps"
+             xmlns:vm="clr-namespace:DroneOps.ViewModels"
+             x:Class="DroneOps.Pages.AircraftList">
+
+    <ContentPage.BindingContext>
+        <vm:AircraftListViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout>
+        <HorizontalStackLayout VerticalOptions="Start">
+            <Label
+                Text="Aircraft Inventory"
+                Style="{StaticResource SubHeadline}"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                Margin="16" />
+
+            <Button
+                Text="Add Aircraft"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                Margin="16"
+                Command="{Binding AddAircraftCommand}" />
+        </HorizontalStackLayout>
+
+        <ScrollView>
+            <CollectionView ItemsSource="{Binding Aircrafts}">
+                <CollectionView.Header>
+                    <Grid Padding="10" BackgroundColor="DarkBlue">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="1.5*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="3*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Name" Grid.Column="0" FontAttributes="Bold" />
+                        <Label Text="Manufacturer" Grid.Column="1" FontAttributes="Bold" />
+                        <Label Text="Model" Grid.Column="2" FontAttributes="Bold" />
+                        <Label Text="Serial Number" Grid.Column="3" FontAttributes="Bold" />
+                        <Label Text="USC 44809 Registration" Grid.Column="4" FontAttributes="Bold" />
+                        <Label Text="Part 107 Registration" Grid.Column="5" FontAttributes="Bold" />
+                        <Label Text="Broadcasts ID" Grid.Column="6" FontAttributes="Bold" />
+                        <Label Text="Weight (kg)" Grid.Column="7" FontAttributes="Bold" />
+                        <Label Text="Airworthiness" Grid.Column="8" FontAttributes="Bold" />
+                        <Label Text="Notes" Grid.Column="9" FontAttributes="Bold" />
+                    </Grid>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" BackgroundColor="DarkGray" Margin="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="1.5*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="3*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Name}" Grid.Column="0" />
+                            <Label Text="{Binding Manufacturer}" Grid.Column="1" />
+                            <Label Text="{Binding Model}" Grid.Column="2" />
+                            <Label Text="{Binding SerialNumber}" Grid.Column="3" />
+                            <Label Text="{Binding USC44809Registration}" Grid.Column="4" />
+                            <Label Text="{Binding Part107Registration}" Grid.Column="5" />
+                            <Label Text="{Binding BroadcastsRemoteID}" Grid.Column="6" />
+                            <Label Text="{Binding Weight}" Grid.Column="7" />
+                            <Label Text="{Binding Airworthiness}" Grid.Column="8" />
+                            <Label Text="{Binding Notes}" Grid.Column="9" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>
