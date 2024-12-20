@@ -14,29 +14,25 @@ namespace DroneOps.ViewModels
             {
                 new Aircraft
                 {
-                    Name = "Drone A",
+                    Owner = "Nathan Schmitt",
                     Manufacturer = "DJI",
                     Model = "Mavic 3",
-                    SerialNumber = "SN123456",
-                    USC44809Registration = "44809-001",
-                    Part107Registration = "107-001",
+                    SerialNumber = "1581F5YH000000000000",
+                    Registration = "FAXXXXXX",
                     BroadcastsRemoteID = true,
                     Weight = 1.2,
-                    Airworthiness = AirworthinessStatus.Airworthy,
-                    Notes = "No issues reported."
+                    Airworthiness = AirworthinessStatus.Airworthy
                 },
                 new Aircraft
                 {
-                    Name = "Drone B",
+                    Owner = "Bob Builder",
                     Manufacturer = "Parrot",
                     Model = "Anafi",
-                    SerialNumber = "SN654321",
-                    USC44809Registration = "44809-002",
-                    Part107Registration = "107-002",
+                    SerialNumber = "1581F5YHFFFFFFFFFFFF",
+                    Registration = "FAXXXXXX",
                     BroadcastsRemoteID = false,
                     Weight = 0.32,
-                    Airworthiness = AirworthinessStatus.Grounded,
-                    Notes = "Battery needs replacement."
+                    Airworthiness = AirworthinessStatus.Grounded
                 }
             };
 
@@ -47,32 +43,28 @@ namespace DroneOps.ViewModels
         {
             Aircrafts.Add(new Aircraft
             {
-                Name = "New Drone",
-                Manufacturer = "Unknown",
+                Owner = "John Doe",
+                Manufacturer = "Unkown",
                 Model = "Unknown",
-                SerialNumber = "SN000000",
-                USC44809Registration = "44809-XXX",
-                Part107Registration = "107-XXX",
+                SerialNumber = "1581F5YHCCCCCCCCCCCC",
+                Registration = "FAXXXXXX",
                 BroadcastsRemoteID = false,
                 Weight = 0.0,
-                Airworthiness = AirworthinessStatus.Grounded,
-                Notes = "Newly added."
+                Airworthiness = AirworthinessStatus.Grounded
             });
         }
     }
 
     public class Aircraft
     {
-        public required string Name { get; set; }
+        public required string Owner { get; set; }
         public required string Manufacturer { get; set; }
         public required string Model { get; set; }
         public required string SerialNumber { get; set; }
-        public required string USC44809Registration { get; set; }
-        public required string Part107Registration { get; set; }
+        public required string Registration { get; set; }
         public bool BroadcastsRemoteID { get; set; }
         public double Weight { get; set; } // in kilograms
         public AirworthinessStatus Airworthiness { get; set; }
-        public required string Notes { get; set; }
     }
 
     public enum AirworthinessStatus

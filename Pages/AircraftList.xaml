@@ -26,59 +26,52 @@
                 Command="{Binding AddAircraftCommand}" />
         </HorizontalStackLayout>
 
-        <ScrollView>
+        <ScrollView Orientation="Both">
             <CollectionView ItemsSource="{Binding Aircrafts}">
                 <CollectionView.Header>
                     <Grid Padding="10" BackgroundColor="DarkBlue">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*" />
-                            <ColumnDefinition Width="2*" />
-                            <ColumnDefinition Width="2*" />
-                            <ColumnDefinition Width="2*" />
-                            <ColumnDefinition Width="2*" />
-                            <ColumnDefinition Width="2*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="1.5*" />
-                            <ColumnDefinition Width="2*" />
-                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="130" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="180" />
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="100" />
                         </Grid.ColumnDefinitions>
-                        <Label Text="Name" Grid.Column="0" FontAttributes="Bold" />
-                        <Label Text="Manufacturer" Grid.Column="1" FontAttributes="Bold" />
+                        
+                        <Label Text="Owner" Grid.Column="0" FontAttributes="Bold" />
+                        <Label Text="Make" Grid.Column="1" FontAttributes="Bold" />
                         <Label Text="Model" Grid.Column="2" FontAttributes="Bold" />
-                        <Label Text="Serial Number" Grid.Column="3" FontAttributes="Bold" />
-                        <Label Text="USC 44809 Registration" Grid.Column="4" FontAttributes="Bold" />
-                        <Label Text="Part 107 Registration" Grid.Column="5" FontAttributes="Bold" />
-                        <Label Text="Broadcasts ID" Grid.Column="6" FontAttributes="Bold" />
-                        <Label Text="Weight (kg)" Grid.Column="7" FontAttributes="Bold" />
-                        <Label Text="Airworthiness" Grid.Column="8" FontAttributes="Bold" />
-                        <Label Text="Notes" Grid.Column="9" FontAttributes="Bold" />
+                        <Label Text="Registration" Grid.Column="3" FontAttributes="Bold" />
+                        <Label Text="Serial Number" Grid.Column="4" FontAttributes="Bold" />
+                        <Label Text="RID" Grid.Column="5" FontAttributes="Bold" />
+                        <Label Text="Weight" Grid.Column="6" FontAttributes="Bold" />
+                        <Label Text="Airworthy?" Grid.Column="7" FontAttributes="Bold" />
                     </Grid>
                 </CollectionView.Header>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="10" BackgroundColor="DarkGray" Margin="2">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*" />
-                                <ColumnDefinition Width="2*" />
-                                <ColumnDefinition Width="2*" />
-                                <ColumnDefinition Width="2*" />
-                                <ColumnDefinition Width="2*" />
-                                <ColumnDefinition Width="2*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="1.5*" />
-                                <ColumnDefinition Width="2*" />
-                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="130" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="100" />
                             </Grid.ColumnDefinitions>
-                            <Label Text="{Binding Name}" Grid.Column="0" />
+                            <Label Text="{Binding Owner}" Grid.Column="0" />
                             <Label Text="{Binding Manufacturer}" Grid.Column="1" />
                             <Label Text="{Binding Model}" Grid.Column="2" />
-                            <Label Text="{Binding SerialNumber}" Grid.Column="3" />
-                            <Label Text="{Binding USC44809Registration}" Grid.Column="4" />
-                            <Label Text="{Binding Part107Registration}" Grid.Column="5" />
-                            <Label Text="{Binding BroadcastsRemoteID}" Grid.Column="6" />
-                            <Label Text="{Binding Weight}" Grid.Column="7" />
-                            <Label Text="{Binding Airworthiness}" Grid.Column="8" />
-                            <Label Text="{Binding Notes}" Grid.Column="9" />
+                            <Label Text="{Binding Registration}" Grid.Column="3" />
+                            <Label Text="{Binding SerialNumber}" Grid.Column="4" />
+                            <Label Text="{Binding BroadcastsRemoteID}" Grid.Column="5" />
+                            <Label Text="{Binding Weight}" Grid.Column="6" />
+                            <Label Text="{Binding Airworthiness}" Grid.Column="7" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
