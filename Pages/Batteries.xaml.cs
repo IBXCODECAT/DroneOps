@@ -1,8 +1,8 @@
 namespace DroneOps.Pages;
 
-public partial class Batteries : ContentPage
+public partial class BatteriesList : ContentPage
 {
-	public Batteries()
+	public BatteriesList()
 	{
 		InitializeComponent();
 	}

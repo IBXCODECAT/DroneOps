@@ -29,7 +29,7 @@
         <ScrollView Orientation="Both">
             <CollectionView ItemsSource="{Binding Aircrafts}">
                 <CollectionView.Header>
-                    <Grid Padding="10" BackgroundColor="DarkBlue">
+                    <Grid Padding="10" BackgroundColor="{StaticResource ColorTertiary}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="130" />
                             <ColumnDefinition Width="80" />
@@ -53,7 +53,7 @@
                 </CollectionView.Header>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid Padding="10" BackgroundColor="DarkGray" Margin="2">
+                        <Grid Padding="10" BackgroundColor="{StaticResource ColorGray900}" Margin="2">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="130" />
                                 <ColumnDefinition Width="80" />
@@ -63,6 +63,9 @@
                                 <ColumnDefinition Width="50" />
                                 <ColumnDefinition Width="50" />
                                 <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
                             </Grid.ColumnDefinitions>
                             <Label Text="{Binding Owner}" Grid.Column="0" />
                             <Label Text="{Binding Manufacturer}" Grid.Column="1" />
@@ -72,6 +75,17 @@
                             <Label Text="{Binding BroadcastsRemoteID}" Grid.Column="5" />
                             <Label Text="{Binding Weight}" Grid.Column="6" />
                             <Label Text="{Binding Airworthiness}" Grid.Column="7" />
+
+                            <Button 
+                                Margin="10,0,0,0"
+                                BackgroundColor="{StaticResource ColorPrimaryDark}"
+                                TextColor="{StaticResource ColorPrimaryDarkText}"
+                                Text="Edit" Grid.Column="9" Command="{Binding EditAircraftCommand}" />
+                            <Button 
+                                Margin="10,0,0,0"
+                                BackgroundColor="{StaticResource ColorError}"
+                                TextColor="{StaticResource ColorWhite}"
+                                Text="Delete" Grid.Column="10" Command="{Binding DeleteAircraftCommand}"/>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

@@ -1,12 +1,82 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DroneOps.Pages.Batteries"
-             Title="Batteries">
+             xmlns:local="clr-namespace:DroneOps"
+             xmlns:vm="clr-namespace:DroneOps.ViewModels"
+             x:Class="DroneOps.Pages.BatteriesList">
+
+    <ContentPage.BindingContext>
+        <vm:BatteryListViewModel />
+    </ContentPage.BindingContext>
+
     <VerticalStackLayout>
-        <Label 
-            Text="Batteries"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <HorizontalStackLayout VerticalOptions="Start">
+            <Label
+                Text="Battery Inventory"
+                Style="{StaticResource SubHeadline}"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                Margin="16" />
+
+            <Button
+                Text="Add Battery"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                Margin="16"
+                Command="{Binding AddBatteryCommand}" />
+        </HorizontalStackLayout>
+
+        <ScrollView Orientation="Both">
+            <CollectionView ItemsSource="{Binding Batteries}">
+                <CollectionView.Header>
+                    <Grid Padding="10" BackgroundColor="{StaticResource ColorTertiary}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="180" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Owner" Grid.Column="0" FontAttributes="Bold" />
+                        <Label Text="Make" Grid.Column="1" FontAttributes="Bold" />
+                        <Label Text="Model" Grid.Column="2" FontAttributes="Bold" />
+                        <Label Text="Serial Number" Grid.Column="3" FontAttributes="Bold" />
+                        <Label Text="Airworthy?" Grid.Column="7" FontAttributes="Bold" />
+                    </Grid>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" BackgroundColor="{StaticResource ColorGray900}" Margin="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="130" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Owner}" Grid.Column="0" />
+                            <Label Text="{Binding Manufacturer}" Grid.Column="1" />
+                            <Label Text="{Binding Model}" Grid.Column="2" />
+                            <Label Text="{Binding SerialNumber}" Grid.Column="3" />
+                            <Label Text="{Binding Airworthiness}" Grid.Column="4" />
+                            <Button 
+                                Margin="10,0,0,0"
+                                BackgroundColor="{StaticResource ColorPrimaryDark}"
+                                TextColor="{StaticResource ColorPrimaryDarkText}"
+                                Text="Edit" Grid.Column="6" Command="{Binding EditBatteryCommand}" CommandParameter="{Binding .}" />
+                            <Button 
+                                Margin="10,0,0,0"
+                                BackgroundColor="{StaticResource ColorError}"
+                                TextColor="{StaticResource ColorWhite}"
+                                Text="Delete" Grid.Column="7" Command="{Binding DeleteBatteryCommand}" CommandParameter="{Binding .}"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
     </VerticalStackLayout>
 </ContentPage>

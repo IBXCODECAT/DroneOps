@@ -20,7 +20,7 @@
             Route="Aircraft" />
         <ShellContent
             Title="Batteries"
-            ContentTemplate="{DataTemplate pages:Batteries}"
+            ContentTemplate="{DataTemplate pages:BatteriesList}"
             Route="Batteries" />
         <ShellContent
             Title="Payloads" 

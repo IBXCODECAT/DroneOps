@@ -1,10 +1,9 @@
-﻿namespace DroneOps.Pages
+﻿namespace DroneOps.Pages;
+
+public partial class AircraftList : ContentPage
 {
-    public partial class AircraftList : ContentPage
+    public AircraftList()
     {
-        public AircraftList()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }
